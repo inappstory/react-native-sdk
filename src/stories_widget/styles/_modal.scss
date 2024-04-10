@@ -1,0 +1,200 @@
+
+// Modal
+
+.modal-backdrop {
+    background-color: #222222;
+    opacity: 0;
+    &.show {
+        opacity: .6;
+    }
+}
+
+.modal {
+    @include media-breakpoint-between(xs, lg) {
+        .modal-dialog {
+            width: 100%;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+
+        .modal-dialog {
+            width: 600px;
+        }
+    }
+
+    .modal-content {
+        @include border-radius(0);
+    }
+
+    .modal-header {
+
+        padding: rem(15px);
+        padding-bottom: 0;
+        border-bottom: 0;
+
+        justify-content: flex-end;
+        z-index: 5000;
+
+        .close {
+
+            width: rem(20px);
+            height: rem(20px);
+            background-image: url("images/closer.svg");
+            fill: $soggy-asphalt;
+
+            margin: 0;
+            padding: 0;
+
+            &:after {
+                content: none;
+            }
+
+            &:hover {
+                fill: $black;
+
+                &:after {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    .modal-body {
+        h3 {
+            margin-top: rem(17px);
+            margin-bottom: rem(17px);
+        }
+
+        .form-row {
+            @include flex-direction(column);
+        }
+
+        .form-group {
+
+            .btn {
+                width: auto !important;
+            }
+
+            max-width: 300px!important;
+
+            @include media-breakpoint-up(lg) {
+                max-width: 460px!important;
+
+                .form-control, .form-control+.text-danger {
+                    max-width: 300px;
+                    margin: 0 auto;
+                }
+
+            }
+
+            margin-bottom: rem(30px);
+
+            .control-label {
+                margin-bottom: rem(30px);
+
+                @include MegaFonGraphikLC(Regular);
+                font-size: rem(15px);
+                line-height: rem(25px);
+                color: $soggy-asphalt;
+            }
+
+        }
+
+        .modal-inner-content {
+            &.simple-modal-content {
+                .form-group {
+                    max-width: 300px!important;
+                }
+            }
+        }
+
+
+    }
+
+    .main-grid-container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+}
+
+.resend-auth-code {
+    @include MegaFonGraphikLC(Regular);
+    font-size: rem(15px);
+    line-height: rem(25px);
+    color: $soggy-asphalt;
+}
+
+@include media-breakpoint-down(md) {
+    #modal {
+        &[data-href^="/user/require-subscribe"] {
+            .modal-header {
+                position: absolute;
+                right: 0;
+            }
+            .modal-body {
+                @include display-flex();
+                @include justify-content(center);
+                @include flex-direction(column);
+                @include align-items(center);
+            }
+        }
+    }
+}
+
+.modal .modal-body {
+    #promo-code-form {
+        #promocodeform-code {
+            background-color: $c-white;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 0;
+            .btn {
+                width: 100% !important;
+            }
+        }
+
+        .subscription-info {
+            .col {
+                margin-top: rem(30px);
+                &:first-of-type {
+                    margin-top: 0;
+                }
+                @include media-breakpoint-up(md) {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        .field-promocodeform-errorfield {
+            @include media-breakpoint-up(md) {
+            max-width: none !important;
+            .text-danger {
+                width: 100%;
+                max-width: none;
+            }
+        }
+        }
+    }
+}
+
+.modal .modal-body {
+    #user-profile {
+        .user-actions {
+            .col {
+                //&:first-of-type {
+                    margin-top: rem(30px);
+                //}
+                .form-group {
+                    margin-bottom: 0;
+                    .btn {
+                        width: 100%!important;
+                    }
+                }
+            }
+        }
+    }
+}
+

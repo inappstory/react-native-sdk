@@ -1,0 +1,65 @@
+.r-subscription-subscribe .sn-content {
+	margin-bottom: 10px;
+
+	h2 {
+		margin: 50px 0;
+
+		.subtitle {
+			margin-top: 10px;
+		}
+	}
+
+	.price-container {
+
+		padding-bottom: 40px;
+
+		.col-sm-4 {
+			@extend .flex-column, .flex-vertical-center;
+
+			.k-btn {
+				font-weight: bold;
+				margin-bottom: 10px;
+			}
+		}
+
+		.price-column {
+			align-items: flex-end;
+		}
+
+		.payment-column {
+			align-items: flex-start;
+
+			.btn-square {
+				border-color: $c-orange;
+				color:        $c-orange;
+
+				&:active {
+					color:            $c-white;
+					background-color: $c-orange;
+				}
+			}
+		}
+
+		@include phone {
+			flex-wrap: wrap;
+
+			.mobile-hidden {
+				display: none;
+			}
+
+			.price-column, .payment-column {
+				align-items: center;
+			}
+		}
+	}
+
+	.subscription-footer {
+		font-weight: normal;
+		font-size: $fs-base;
+		color: darken($c-dark-white, 20%);
+
+		img {
+			height: 30px;
+		}
+	}
+}

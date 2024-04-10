@@ -1,0 +1,44 @@
+
+body.custom {
+
+    .list-search-magazines {
+
+        .magazines {
+
+            .magazine {
+
+                .magazine-cover-container {
+                }
+
+                .magazine-info-container {
+                    .title {
+
+                        .title-link {
+                        }
+
+                        .highlight {
+                            background: $c-green;
+                            color: $c-black;
+                        }
+
+                    }
+                    .magazine-date {
+                        color: $c-gray;
+                    }
+                    .magazine-content {
+                        color: $c-gray;
+
+                        .highlight {
+                            background: rgba($c-green, 0.9);
+                            color: $c-black;
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150.1 149.9" id="svg-logo">
+    <defs>
+        <style>#svg-logo .cls-1{fill:#00b956;}</style>
+    </defs>
+    <title>Logo</title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <g id="Symbols">
+                <g id="Logotype_Face" data-name="Logotype/Face">
+                    <g id="logo">
+                        <g id="Group">
+                            <path id="Shape" class="cls-1"
+                                  d="M126.7,115.9a9.4,9.4,0,1,1,9.4-9.4,9.39,9.39,0,0,1-9.4,9.4m-22,0a9.4,9.4,0,1,1,9.4-9.4,9.39,9.39,0,0,1-9.4,9.4m-22,0a9.4,9.4,0,1,1,9.4-9.4,9.39,9.39,0,0,1-9.4,9.4M84.3.6V77.9h0A6.12,6.12,0,0,1,78.2,84H69a.79.79,0,0,0-.8.8v64.8q3.45.3,6.9.3A74.93,74.93,0,0,0,84.3.6"/>
+                            <path id="Shape-2" data-name="Shape" class="cls-1"
+                                  d="M60.6,61.8A9.4,9.4,0,1,1,70,52.4a9.39,9.39,0,0,1-9.4,9.4ZM75,0A75,75,0,0,0,59.1,148.3V81h0A6.21,6.21,0,0,1,65,75h9.4a.79.79,0,0,0,.8-.8V0Z"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

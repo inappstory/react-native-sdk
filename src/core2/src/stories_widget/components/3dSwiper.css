@@ -1,0 +1,36 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.slider3d__rotater, .slider3d__inner {
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.slider3d {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+.slider3d.no-select {
+  user-select: none;
+}
+.slider3d__wrapper {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+.slider3d__item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/*# sourceMappingURL=3dSwiper.css.map */

@@ -1,0 +1,269 @@
+//////////////
+//Index Page//
+//////////////
+
+//.r-static-view {
+//	nav.navbar {
+//		box-shadow: 0 0 15px 0 rgba(40,40,40,.2);
+//	}
+//
+//	h1 {
+//		font-size: em(50px);
+//		color: $c-black;
+//	}
+//
+//	h3 {
+//		font-size: em(41px);
+//		color: $c-black;
+//	}
+//
+//	p {
+//		font-size: em(17px);
+//		color: $c-black;
+//	}
+//
+//}
+
+.r-index-index {
+
+	nav.navbar {
+		box-shadow: 0 0 15px 0 rgba(40,40,40,.2);
+	}
+
+	.promo-banner-container {
+		max-width: 1920px;
+		width: 100%;
+		margin: 0 auto;
+		padding: 25% 0 0 0;
+		position: relative;
+		overflow: hidden;
+		.promo-banner {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: 0;
+
+			div.slick-slide {
+				width: 100%;
+				display: inline-block;
+				position: relative;
+
+				&:after {
+					padding: 25% 0 0 0;
+					display: block;
+					content: '';
+				}
+
+				a {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 0;
+					left: 0;
+					background-size: cover;
+				}
+			}
+		}
+
+		.slick-slider {
+			margin-bottom: 0;
+
+			.slick-arrow {
+				top:        50%;
+				opacity:    0;
+				@include transition(opacity 0.5s);
+				//width: 70px;
+				//height: 70px;
+				//line-height: 70px;
+			}
+			.fa-angle-left {
+				left: 15px;
+				&::before {
+					margin-left: -12px;
+				}
+			}
+			.fa-angle-right {
+				right: 15px;
+				&::before {
+					margin-left: 11px;
+				}
+			}
+
+			.angle-left {
+				@extend %slider-btn-2;
+				left: 15px;
+
+				.arrow {
+					-webkit-transform: rotate(45deg);
+					-ms-transform: rotate(45deg);
+					transform: rotate(45deg);
+				}
+
+			}
+
+			.angle-right {
+				@extend %slider-btn-2;
+				right: 15px;
+
+				.arrow {
+					-webkit-transform: rotate(225deg);
+					-ms-transform: rotate(225deg);
+					transform: rotate(225deg);
+				}
+
+			}
+
+		}
+
+		.slick-dots {
+			bottom: 0;
+
+			opacity: 0.6;
+			position: absolute;
+			padding: 0;
+
+			li {
+				button {
+					background:    $c-white;
+					width:         16px;
+					height:        16px;
+					border-radius: 8px;
+					border:        2px solid darken($c-dark-orange, 10%);
+					margin: 0 2px;
+					padding: 0;
+				}
+
+				&.slick-active {
+					button {
+						position: relative;
+
+						&:after {
+							content:       ' ';
+							display:       block;
+							width:         8px;
+							height:        8px;
+							border-radius: 4px;
+							background:    $c-orange;
+							top: 2px;
+							left: 2px;
+							position: absolute;
+						}
+					}
+				}
+			}
+		}
+
+		&:hover {
+			.slick-arrow {
+				opacity: 1;
+			}
+		}
+
+		@include phone {
+			display: none;
+		}
+	}
+
+	.issues-container {
+		margin-bottom: -50px;
+
+		@include phone {
+			margin-bottom: 0;
+		}
+	}
+
+	.articles-container {
+		&.slick-initialized {
+			margin-bottom: 0;
+		}
+	}
+
+	////////////////
+	// Categories //
+	////////////////
+
+	.categories-container {
+		max-width: 1920px;
+		margin: 0 auto;
+
+		.category {
+			width:    20%;
+			height:   288px;
+			float:    left;
+			position: relative;
+			background-size: cover;
+			@extend .flex-center, .flex-vertical-center;
+
+			.overlay {
+				position:   absolute;
+				top:        0;
+				left:       0;
+				right:      0;
+				bottom:     0;
+				background: rgba($c-black, 0.5);
+				opacity:    1;
+				@include transition(opacity 0.5s);
+			}
+
+			.btn-category {
+				font-weight: normal;
+				font-size:      em(18px);
+				color:          $c-white;
+				padding:        10px 25px;
+				//text-transform: uppercase;
+				border:         1px solid rgba($c-white, 0.75);
+				z-index:        10;
+			}
+
+			&:hover {
+				text-decoration: none;
+
+				.overlay {
+					opacity: 0;
+				}
+
+				.btn-category {
+					//padding:          11px 26px;
+					//border-width:     0;
+					border-color: $c-dark-orange;
+					color:            $c-dark-orange;
+					background-color: transparent;
+				}
+			}
+
+			@include phone {
+				width:  100%;
+				height: 100px;
+			}
+		}
+
+		.show-more {
+			@extend .flex-column, .flex-vertical-center;
+			font-weight: bold;
+			display: none;
+			float: left;
+			width: 100%;
+			padding: 20px 20px;
+			text-align: center;
+			color: $c-light-orange;
+
+			.fa-repeat {
+				color: $c-white;
+				display: block;
+				background: $c-light-orange;
+				width: 40px;
+				height: 40px;
+				padding: 11px;
+				border-radius: 20px;
+				margin-bottom: 10px;
+				font-size: $fs-mlarge;
+			}
+
+			@include phone {
+				display: flex;
+			}
+		}
+	}
+}

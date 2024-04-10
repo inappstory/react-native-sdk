@@ -1,0 +1,286 @@
+/**
+ * Grid
+ */
+
+/**
+ * Header
+ */
+$header-grid-gutter-width: 40px;
+.header-container-fluid {
+    @include make-container();
+    .row {
+        @include make-row();
+        @include make-grid-columns($grid-columns, $header-grid-gutter-width, $grid-breakpoints);
+    }
+}
+
+$grid-columns: 12;
+$grid-gutter-width: 20px;
+
+$grid-breakpoints: (
+    //// Extra small screen / phone
+    //    xs: 0,
+    //// Small screen / phone
+    //    sm: 576px,
+    //// Medium screen / tablet
+    //    md: 768px,
+    //// Large screen / desktop
+    //    lg: 992px,
+    //// Extra large screen / wide desktop
+    //    xl: 1200px
+    // Extra small screen / phone (0 - 649px)
+        xs: 0,
+    // Medium screen / tablet (650-979px)
+        md: 650px,
+    // Large screen / desktop (980-1219px)
+        lg: 980px,
+    // Extra large screen / wide desktop (1220 - 1360px)
+        xl: 1220px,
+    // Extra wide screen / extra wide desktop (>= 1360px)
+        xw: 1360px
+);
+
+$grid-gutters: (
+    xs: 20px,
+    md: 20px,
+    lg: 30px,
+    xl: 40px,
+    xw: 40px
+);
+//$container-max-widths: (
+//        sm: 540px,
+//        md: 720px,
+//        lg: 960px,
+//        xl: 1140px
+//);
+
+
+// TODO просто пересобрать bootstrap с нужными grid-gutters через webpack
+//
+// Utilities for common `display` values
+//
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .d#{$infix}-none         { display: none !important; }
+        .d#{$infix}-inline       { display: inline !important; }
+        .d#{$infix}-inline-block { display: inline-block !important; }
+        .d#{$infix}-block        { display: block !important; }
+        .d#{$infix}-table        { display: table !important; }
+        .d#{$infix}-table-row    { display: table-row !important; }
+        .d#{$infix}-table-cell   { display: table-cell !important; }
+        .d#{$infix}-flex         { display: flex !important; }
+        .d#{$infix}-inline-flex  { display: inline-flex !important; }
+    }
+}
+
+
+// Margin and Padding
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        @each $prop, $abbrev in (margin: m, padding: p) {
+            @each $size, $length in $spacers {
+
+                .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
+                .#{$abbrev}t#{$infix}-#{$size},
+                .#{$abbrev}y#{$infix}-#{$size} {
+                    #{$prop}-top: $length !important;
+                }
+                .#{$abbrev}r#{$infix}-#{$size},
+                .#{$abbrev}x#{$infix}-#{$size} {
+                    #{$prop}-right: $length !important;
+                }
+                .#{$abbrev}b#{$infix}-#{$size},
+                .#{$abbrev}y#{$infix}-#{$size} {
+                    #{$prop}-bottom: $length !important;
+                }
+                .#{$abbrev}l#{$infix}-#{$size},
+                .#{$abbrev}x#{$infix}-#{$size} {
+                    #{$prop}-left: $length !important;
+                }
+            }
+        }
+
+        // Some special margin utils
+        .m#{$infix}-auto { margin: auto !important; }
+        .mt#{$infix}-auto,
+        .my#{$infix}-auto {
+            margin-top: auto !important;
+        }
+        .mr#{$infix}-auto,
+        .mx#{$infix}-auto {
+            margin-right: auto !important;
+        }
+        .mb#{$infix}-auto,
+        .my#{$infix}-auto {
+            margin-bottom: auto !important;
+        }
+        .ml#{$infix}-auto,
+        .mx#{$infix}-auto {
+            margin-left: auto !important;
+        }
+    }
+}
+
+
+// Main grid - work only with special wrapper
+.main-grid-wrapper {
+
+    // phone
+    //@include media-breakpoint-up(xs) {
+    //    $grid-gutter-width: map-get($grid-gutters, xs);
+    //    padding-left: (20px - $grid-gutter-width / 2);
+    //    padding-right: (20px - $grid-gutter-width / 2);
+    //    .main-grid-container-fluid {
+    //        @include make-container();
+    //
+    //        .row {
+    //            @include make-row();
+    //            @include make-grid-columns($grid-columns, $grid-gutter-width, $grid-breakpoints);
+    //
+    //            .aspect-ratio-content {
+    //                @include make-aspect-ratio-grid-content($grid-gutter-width);
+    //            }
+    //        }
+    //    }
+    //}
+    //
+    //// tablet
+    //@include media-breakpoint-up(md) {
+    //    $grid-gutter-width: map-get($grid-gutters, md);
+    //    padding-left: (35px - $grid-gutter-width / 2);
+    //    padding-right: (35px - $grid-gutter-width / 2);
+    //    .main-grid-container-fluid {
+    //        @include make-container();
+    //        .row {
+    //            @include make-grid-columns($grid-columns, $grid-gutter-width, $grid-breakpoints);
+    //
+    //            .aspect-ratio-content {
+    //                @include make-aspect-ratio-grid-content($grid-gutter-width);
+    //            }
+    //        }
+    //    }
+    //}
+    //
+    //// desktop
+    //@include media-breakpoint-up(lg) {
+    //    $grid-gutter-width: map-get($grid-gutters, lg);
+    //    padding-left: (40px - $grid-gutter-width / 2);
+    //    padding-right: (40px - $grid-gutter-width / 2);
+    //    .main-grid-container-fluid {
+    //        @include make-container();
+    //
+    //        .row {
+    //            @include make-row();
+    //            @include make-grid-columns($grid-columns, $grid-gutter-width, $grid-breakpoints);
+    //
+    //            .aspect-ratio-content {
+    //                @include make-aspect-ratio-grid-content($grid-gutter-width);
+    //            }
+    //        }
+    //
+    //    }
+    //}
+    //
+    //// desktop
+    //@include media-breakpoint-up(xl) {
+    //    $grid-gutter-width: map-get($grid-gutters, xl);
+    //    padding-left: (70px - $grid-gutter-width / 2);
+    //    padding-right: (70px - $grid-gutter-width / 2);
+    //    .main-grid-container-fluid {
+    //        @include make-container();
+    //
+    //        .row {
+    //            @include make-row();
+    //            @include make-grid-columns($grid-columns, $grid-gutter-width, $grid-breakpoints);
+    //
+    //            .aspect-ratio-content {
+    //                @include make-aspect-ratio-grid-content($grid-gutter-width);
+    //            }
+    //        }
+    //    }
+    //}
+    //
+    //// wide desktop
+    //@include media-breakpoint-up(xw) {
+    //    $grid-gutter-width: map-get($grid-gutters, xw);
+    //    padding-left: (70px - $grid-gutter-width / 2);
+    //    padding-right: (70px - $grid-gutter-width / 2);
+    //    .main-grid-container-fluid {
+    //        @include make-container();
+    //        max-width: 1640px;
+    //
+    //        .row {
+    //            @include make-row();
+    //            @include make-grid-columns($grid-columns, $grid-gutter-width, $grid-breakpoints);
+    //
+    //            .aspect-ratio-content {
+    //                @include make-aspect-ratio-grid-content($grid-gutter-width);
+    //            }
+    //        }
+    //    }
+    //}
+
+    @each $breakpoint in map-keys($grid-breakpoints) {
+        @include media-breakpoint-up($breakpoint) {
+            $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+            $current-gutter-width: map-get($grid-gutters, $breakpoint);
+
+            @for $i from 1 through $grid-columns {
+                .col#{$infix}-#{$i} {
+                    %col-full-width {
+                        $percent: percentage(-1 * (($grid-columns - $i) / $grid-columns / 2));
+                        $px: ($current-gutter-width / 2);
+                        $grid-width: $i / $grid-columns;
+
+                        margin-left: (-1 * ((1 / $grid-width * 100%) - 100%)/2);
+                        margin-right: (-1 * ((1 / $grid-width * 100%) - 100%)/2);
+
+                        margin-left: calc(-1 * ((100% + #{$current-gutter-width}) * #{(1 / $grid-width)} - (100% + #{$current-gutter-width})) / 2);
+                        margin-right: calc(-1 * ((100% + #{$current-gutter-width}) * #{(1 / $grid-width)} - (100% + #{$current-gutter-width})) / 2);
+
+                    }
+
+                }
+            }
+
+            .d#{$infix}-none         { display: none !important; }
+            .d#{$infix}-inline       { display: inline !important; }
+            .d#{$infix}-inline-block { display: inline-block !important; }
+            .d#{$infix}-block        { display: block !important; }
+            .d#{$infix}-table        { display: table !important; }
+            .d#{$infix}-table-row    { display: table-row !important; }
+            .d#{$infix}-table-cell   { display: table-cell !important; }
+            .d#{$infix}-flex         { display: flex !important; }
+            .d#{$infix}-inline-flex  { display: inline-flex !important; }
+        }
+    }
+
+
+
+    .no-gutters {
+        margin-right: 0;
+        margin-left: 0;
+
+        > .col,
+        > [class*="col-"] {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+}
+
+
+.modal {
+    .modal-body {
+        .main-grid-wrapper {
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+    }
+}

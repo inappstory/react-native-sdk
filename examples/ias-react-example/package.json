@@ -1,0 +1,49 @@
+{
+  "name": "ias-react-example",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/plugin-proposal-class-properties": "^7.16.5",
+    "@babel/plugin-transform-runtime": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-flow": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
+    "@parcel/transformer-sass": "^2.0.1",
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/lodash": "^4.14.178",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@types/uuid": "^8.0.0",
+    "normalize.css": "^8.0.1",
+    "parcel": "^2.0.1"
+  },
+  "dependencies": {
+    "ias-react": "file:../../npm/ias-react",
+    "react": "^16.13.1",
+    "react-bootstrap": "^2.0.3",
+    "react-dom": "^16.14.0",
+    "effector": "^22.1.2",
+    "regenerator-runtime": "^0.13.9",
+    "uuid": "^8.3.2",
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
+    "normalize.css": "^8.0.1",
+    "plural-ru": "^2.0.2"
+  },
+  "scripts": {
+    "start": "npx parcel --no-autoinstall --no-cache src/index.html",
+    "dev": "npx parcel --no-autoinstall --no-cache src/index.html",
+    "build": "npx parcel build --no-cache --no-autoinstall src/index.html"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions"
+  ],
+
+  "alias": {
+    "react": "./node_modules/react/index.js"
+  }
+}

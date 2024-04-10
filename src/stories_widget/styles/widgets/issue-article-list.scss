@@ -1,0 +1,43 @@
+body {
+    &.custom {
+
+        .articles-container {
+            .article-item {
+
+                .category-title {
+                    color: $c-green;
+
+                    .svg-image {
+                        svg {
+                            path {
+                                fill: $c-green;
+                            }
+                        }
+                    }
+
+                }
+
+                .issue-info {
+                    .calendar {
+                        background-image: url("images/ic_calendar.png");
+                    }
+                }
+
+                .share-buttons {
+                    .add-to-fav {
+                        .svg-image {
+                            svg {
+                                path {
+                                    fill: $c-green;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+

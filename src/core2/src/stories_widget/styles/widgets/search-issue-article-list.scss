@@ -1,0 +1,44 @@
+
+body.custom {
+
+    .list-search-issue-article {
+
+        .issue-articles {
+
+            .issue-article {
+
+                .issue-article-cover-container {
+                }
+
+                .issue-article-info-container {
+                    .title {
+
+                        .title-link {
+                        }
+
+                        .highlight {
+                            background: $c-green;
+                            color: $c-black;
+                        }
+
+                    }
+                    .issue-article-date {
+                        color: $c-gray;
+                    }
+                    .issue-article-content {
+                        color: $c-gray;
+
+                        .highlight {
+                            background: rgba($c-green, 0.9);
+                            color: $c-black;
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+}

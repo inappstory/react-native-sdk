@@ -1,0 +1,11 @@
+.r-shelf-marks {
+	.issues-container {
+		.row {
+			@media (max-width: 475px) {
+				@include display-flex;
+				@include justify-content(center);
+				@include flex-wrap(wrap);
+			}
+		}
+	}
+}

@@ -1,0 +1,126 @@
+////////////
+// Colors //
+////////////
+
+
+$black: rgb(0, 0, 0);
+//$green: rgb(0, 185, 86); // MF
+$green: rgb(100, 190, 111); // kiozk
+$blue: rgb(60, 171, 239);
+$purple: rgb(115, 25, 130);
+$spb-sky-1: rgb(237, 237, 237);
+$spb-sky-3: rgb(130, 130, 130);
+$spb-sky-2: rgb(216, 216, 216);
+$soggy-asphalt: rgb(51, 51, 51);
+$error-text: rgb(243, 40, 59);
+
+
+
+
+// OLDS
+
+
+// White → Gray
+$c-white:      rgb(255, 255, 255);
+$c-dark-white: rgb(235, 235, 235);
+
+$c-gray:       rgb(208, 200, 186);
+
+// Beige
+$c-beige: rgb(238, 234, 229); // фон продуктовых страниц
+
+// Gray
+$c-light-gray: rgb(230, 230, 230); // фон второстепенного контента и плашек статусов у неактивных услуг
+$c-dark-gray:  rgb(120, 120, 120); // для второстепенного текста
+
+// Black
+$c-black:      rgb(40, 40, 40); // для текста, фона футера, хедера, сервисных блоков
+
+// Orange
+$c-dark-orange: rgb(244, 159, 39); // для ховеров на тексте и выделения важных надписей
+$c-light-orange: rgb(251, 206, 93); // для выделения активных контролов, ховеров на контролах и выделения важных блоков
+
+// Yellow
+$c-light-yellow: rgb(255, 246, 206); // фон плашек с предупреждениями, информациооными сообщениями и статусами
+
+// Green
+$c-green: rgb(130, 184, 130); // фон плашек статусов у подключенных продуктов
+
+// Red
+$c-red: rgb(225, 53, 57); // для плашек и текстов про ошибки
+
+
+
+
+$c-link-gray:      rgb(155, 155, 155);
+
+// Green
+$c-light-green: rgb(249, 181, 25);
+$c-light-green: $c-light-orange;
+//$c-green:       rgb(249, 181, 25);
+$c-dark-green: rgb(225, 175, 50);
+
+
+// ORANGE!!!
+$c-yellow:    rgb(252, 200, 42);
+$c-orange:    rgb(255, 139, 62);
+$c-light-red: rgb(247, 130, 130);
+//
+$c-btn-bg: rgb(249,181, 25);
+$c-btn-bg-press: rgb(199,145,44);
+$c-btn-text: rgb(51,51,51);
+$c-btn-text-press: rgb(51,51,51);
+//
+
+
+$c-accent: $c-dark-orange;
+
+$c-text-on-accent: rgb(51,51,51);
+
+$c-navbar-section-text-normal: $c-black;
+
+$c-navbar-section-text-hover: $c-dark-orange;
+
+
+$c-navbar-sub-section-bg-active: $c-accent;
+$c-navbar-section-bg-active: $c-light-orange;
+
+
+$c-navbar-section-text-active: $c-black;
+
+$c-navbar-sub-section-text-active: $c-accent;
+
+$c-all: (
+	white: $c-white,
+	dark-white: $c-dark-white,
+	light-gray: $c-light-gray,
+	gray: $c-gray,
+	dark-gray: $c-dark-gray,
+	black: $c-black,
+
+	light-green: $c-light-green,
+	green: $c-green,
+	dark-green: $c-dark-green,
+
+	yellow: $c-yellow,
+	orange: $c-orange,
+	light-red: $c-light-red
+);
+
+@each $name, $color in $c-all {
+	.f-#{$name} {
+		color: $color
+	}
+
+	.f-h-#{$name} {
+		&:hover {
+			color: $color;
+		}
+	}
+
+	.f-a-#{$name} {
+		&:hover {
+			color: $color;
+		}
+	}
+}

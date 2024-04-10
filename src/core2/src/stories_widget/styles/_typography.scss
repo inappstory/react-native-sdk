@@ -1,0 +1,711 @@
+/* Text styles */
+
+
+@mixin color-soggy-asphalt {
+    color: $soggy-asphalt;
+}
+@mixin color-soggy-asphalt-half {
+    color: rgba($soggy-asphalt, .5);
+}
+@mixin color-spb-sky-3 {
+    color: $spb-sky-3;
+}
+
+@mixin color-soggy-asphalt-link {
+    color: $soggy-asphalt;
+    &:hover {
+        color: $black;
+    }
+    &:active {
+        color: $black;
+    }
+    &:focus {
+        color: $black;
+    }
+    &:active:focus {
+        color: $black;
+    }
+
+}
+
+@mixin gray-on-white-link {
+    color: $spb-sky-3;
+    svg {
+        path {
+            fill: $spb-sky-3;
+        }
+    }
+
+    &:hover {
+        color: $green;
+        svg {
+            path {
+                fill: $green;
+            }
+        }
+    }
+    &:active {
+        color: $green;
+        svg {
+            path {
+                fill: $green;
+            }
+        }
+    }
+    &:focus {
+        color: $green;
+        svg {
+            path {
+                fill: $green;
+            }
+        }
+    }
+    &:active:focus {
+        color: $green;
+        svg {
+            path {
+                fill: $green;
+            }
+        }
+    }
+
+}
+
+@mixin white-on-transparent-link {
+    color: $c-white;
+    svg {
+        path {
+            fill: $c-white;
+        }
+    }
+
+    &:hover {
+        color: rgba($c-white, .8);
+        svg {
+            path {
+                fill: rgba($c-white, .8);
+            }
+        }
+    }
+    &:active {
+        color: rgba($c-white, .8);
+        svg {
+            path {
+                fill: rgba($c-white, .8);
+            }
+        }
+    }
+    &:focus {
+        color: rgba($c-white, .8);
+        svg {
+            path {
+                fill: rgba($c-white, .8);
+            }
+        }
+    }
+    &:active:focus {
+        color: rgba($c-white, .8);
+        svg {
+            path {
+                fill: rgba($c-white, .8);
+            }
+        }
+    }
+
+}
+
+
+@mixin text-h1 {
+    @include FontWeight(Medium);
+    font-size: rem(24px);
+    line-height: rem(30px);
+    @include Photoshop-letter-spacing(0);
+
+    @include media-breakpoint-up(lg) {
+        @include FontWeight(Bold);
+        font-size: rem(40px);
+        line-height: rem(45px);
+    }
+}
+
+@mixin text-h1-mobile {
+    @include FontWeight(Medium);
+    font-size: rem(24px);
+    line-height: rem(30px);
+    @include Photoshop-letter-spacing(0);
+}
+
+@mixin text-h2 {
+    @include FontWeight(Medium);
+    font-size: rem(24px);
+    line-height: rem(30px);
+    @include Photoshop-letter-spacing(0);
+
+    @include media-breakpoint-up(lg) {
+        @include FontWeight(Semibold);
+        font-size: rem(28px);
+        line-height: rem(35px);
+    }
+}
+
+@mixin text-h3 {
+    @include FontWeight(Medium);
+    font-size: rem(15px);
+    line-height: rem(20px);
+    @include Photoshop-letter-spacing(0);
+
+    @include media-breakpoint-up(lg) {
+        @include FontWeight(Semibold);
+        font-size: rem(18px);
+        line-height: rem(25px);
+        @include Photoshop-letter-spacing(0);
+    }
+}
+
+
+@mixin text-category {
+    @include FontWeight(Medium);
+    font-size: rem(10px);
+    line-height: rem(15px);
+    @include Photoshop-letter-spacing(1);
+    text-transform: uppercase;
+
+    @include media-breakpoint-up(lg) {
+        font-size: rem(12px);
+        line-height: rem(15px);
+    }
+}
+
+@mixin text-description {
+    @include FontWeight(Regular);
+    font-size: rem(15px);
+    line-height: rem(25px);
+    @include Photoshop-letter-spacing(0);
+
+    @include media-breakpoint-up(lg) {
+        font-size: rem(18px);
+        line-height: rem(30px);
+    }
+}
+
+@mixin text-author {
+    @include FontWeight(Medium);
+    font-size: rem(12px);
+    line-height: rem(15px);
+    @include Photoshop-letter-spacing(0);
+
+    @include media-breakpoint-up(lg) {
+        font-size: rem(15px);
+        line-height: rem(20px);
+    }
+}
+
+@mixin text-paragraph {
+    font-size: rem(15px);
+    line-height: rem(25px);
+    @include Photoshop-letter-spacing(0);
+
+    @include media-breakpoint-up(lg) {
+        font-size: rem(18px);
+        line-height: rem(30px);
+    }
+}
+
+@mixin text-paragraph-mobile {
+    font-size: rem(15px);
+    line-height: rem(25px);
+    @include Photoshop-letter-spacing(0);
+}
+
+@mixin text-footnote-mobile {
+    @include FontWeight(Regular);
+    font-size: rem(12px);
+    line-height: rem(15px);
+    @include Photoshop-letter-spacing(0);
+}
+
+@mixin text-blockqoute {
+    @include FontWeight(Medium);
+    color: $green;
+    padding-left: rem(25px);
+    border-left: 5px solid $green;
+
+    @include media-breakpoint-up(md) {
+        padding-left: rem(35px);
+    }
+
+    //padding: 10px 20px;
+    //margin: 0 0 20px;
+    //font-size: 1.1em;
+    //font-style: italic;
+    //font-weight: bold;
+    //border-left: 5px solid #eee;
+}
+
+@mixin text-caption {
+    font-size: rem(12px);
+    line-height: rem(15px);
+    @include Photoshop-letter-spacing(0);
+
+    @include media-breakpoint-up(lg) {
+        font-size: rem(15px);
+        line-height: rem(20px);
+    }
+}
+
+@mixin text-lead {
+
+    @include FontWeight(Regular);
+    font-size: rem(15px);
+    line-height: rem(20px);
+    @include Photoshop-letter-spacing(0);
+
+    @include media-breakpoint-up(lg) {
+        font-size: rem(18px);
+        line-height: rem(25px);
+    }
+
+
+}
+
+@mixin text-signature {
+    @include FontWeight(Regular);
+    //@include MegaFonGraphikLC(Regular);
+    font-size: rem(15px);
+    line-height: rem(20px);
+    @include Photoshop-letter-spacing(0);
+}
+
+@mixin text-small-header-mobile {
+    @include FontWeight(Medium);
+    font-size: rem(18px);
+    line-height: rem(25px);
+    @include Photoshop-letter-spacing(0);
+}
+
+@mixin text-card-title {
+    @include FontWeight(Medium);
+    font-size: rem(18px);
+    line-height: rem(25px);
+    @include Photoshop-letter-spacing(0);
+
+
+}
+
+body.custom {
+
+    a {
+        text-decoration: none;
+        color: rgb(60, 171, 239);
+        &:hover, &:focus, &:active {
+            color: rgb(11, 131, 205);
+        }
+    }
+
+    .gray-3-link {
+        color: $spb-sky-3;
+        &:hover {
+            color: $black;
+        }
+    }
+
+    .text-gray-3 {
+        color: $spb-sky-3 !important;
+        a, &a {
+            color: $spb-sky-3 !important;
+            text-decoration: underline;
+            &:hover, &:active, &:focus {
+                color: $black !important;
+            }
+        }
+    }
+
+    .soggy-asphalt {
+        color: $soggy-asphalt !important;
+        fill: $soggy-asphalt !important;
+    }
+
+    .soggy-asphalt-half {
+        @include color-soggy-asphalt-half();
+    }
+
+    .soggy-asphalt-link {
+        &, & svg g {
+            color: $soggy-asphalt !important;
+            fill: $soggy-asphalt !important;
+        }
+        &:hover, &:hover svg g {
+            color: $black !important;
+            fill: $black !important;
+        }
+    }
+
+    .soggy-asphalt-half-link {
+        color: rgba($soggy-asphalt, .5) !important;
+        &:hover {
+            color: rgba($black, .5) !important;
+        }
+    }
+
+    .underline-link {
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .cursor-default {
+        cursor: default;
+    }
+
+    .text-modal-header {
+        @include FontWeight(Semibold);
+        font-size: rem(28px);
+        line-height: rem(35px);
+        @include Photoshop-letter-spacing(0);
+    }
+
+    .text-modal-header-small {
+        @include FontWeight(Medium);
+        font-size: rem(24px);
+        line-height: rem(30px);
+        @include Photoshop-letter-spacing(0);
+    }
+
+    .signature-small {
+        @include FontWeight(Regular);
+        font-size: rem(12px);
+        line-height: rem(15px);
+        @include Photoshop-letter-spacing(0);
+    }
+
+    .text-signature, .signature {
+        @include text-signature();
+    }
+
+    .lead {
+        @include text-lead();
+        //@include MegaFonGraphikLC(Regular);
+        //font-size: rem(18px);
+        //line-height: rem(25px);
+        //@include Photoshop-letter-spacing(0);
+    }
+
+    .head, h1 {
+        @include text-h1();
+    }
+
+    .subhead, h2 {
+        @include MegaFonGraphikLC(Semibold);
+        @include Photoshop-letter-spacing(0);
+        font-size: rem(28px);
+        line-height: rem(35px);
+    }
+
+    .small-head, h3 {
+        @include MegaFonGraphikLC(Medium);
+        font-size: rem(15px);
+        line-height: rem(20px);
+        @include Photoshop-letter-spacing(0);
+
+        @include media-breakpoint-up(md) {
+            font-size: rem(18px);
+            line-height: rem(25px);
+        }
+    }
+
+
+
+    .h1-mobile {
+        @include text-h1-mobile();
+    }
+    .text-paragraph-mobile {
+        @include text-paragraph-mobile();
+    }
+    .text-footnote-mobile {
+        @include text-footnote-mobile();
+    }
+
+    .text-category {
+        @include MegaFonGraphikLC(Medium);
+        font-size: rem(10px);
+        line-height: rem(15px);
+        @include Photoshop-letter-spacing(1px);
+    }
+
+    .text-small-header-mobile {
+        @include text-small-header-mobile();
+    }
+
+    strong {
+        @include FontWeight(Medium);
+    }
+
+    .text-color-error {
+        color: $error-text!important;
+        fill: $error-text!important;
+    }
+    .text-color-success {
+        color: $green!important;
+        fill: $green!important;
+    }
+
+    //p {
+    //    @include MegaFonGraphikLC(Regular);
+    //    font-size: rem(15px);
+    //    line-height: rem(20px);
+    //    @include Photoshop-letter-spacing(0);
+    //
+    //    @include media-breakpoint-up(md) {
+    //        font-size: rem(18px);
+    //        line-height: rem(25px);
+    //    }
+    //}
+
+
+    .dot {
+        display: inline-block;
+        line-height: inherit;
+        margin: 0 0.5rem;
+
+        &:before {
+            vertical-align: middle;
+            display: inline-block;
+            background-color: $black;
+            @include border-radius(50%);
+            width: rem(4px);
+            height: rem(4px);
+            content: "";
+        }
+    }
+
+}
+
+@mixin SA-C {
+    font-family: MegaFonGraphikLC;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: $soggy-asphalt;
+}
+
+@mixin White-C {
+    font-family: MegaFonGraphikLC;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+@mixin MWhite {
+    font-family: MegaFonGraphikLC;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+@mixin MSA {
+    font-family: MegaFonGraphikLC;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: left;
+    color: $soggy-asphalt;
+}
+
+@mixin MWhite {
+    font-family: MegaFonGraphikLC;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+@mixin MWhite {
+    font-family: MegaFonGraphikLC;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.39;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+@mixin MSA {
+    font-family: MegaFonGraphikLC;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.39;
+    text-align: left;
+    color: $soggy-asphalt;
+}
+
+@mixin SA-C {
+    font-family: MegaFonGraphikLC;
+    font-size: 18px;
+    line-height: 1.39;
+    text-align: center;
+    color: $soggy-asphalt;
+}
+
+@mixin Green {
+    font-family: MegaFonGraphikLC;
+    font-size: 18px;
+    line-height: 1.39;
+    text-align: left;
+    color: $green;
+}
+
+@mixin SA {
+    font-family: MegaFonGraphikLC;
+    font-size: 18px;
+    line-height: 1.39;
+    text-align: left;
+    color: $soggy-asphalt;
+}
+
+@mixin MSA- {
+    font-family: MegaFonGraphikLC;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.33;
+    text-align: center;
+    color: $soggy-asphalt;
+}
+
+@mixin MWhite {
+    font-family: MegaFonGraphikLC;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.33;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+@mixin MSA {
+    font-family: MegaFonGraphikLC;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.33;
+    text-align: left;
+    color: $soggy-asphalt;
+}
+
+@mixin MWhite-C {
+    font-family: MegaFonGraphikLC;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.33;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+@mixin Spb3 {
+    font-family: MegaFonGraphikLC;
+    font-size: 15px;
+    line-height: 1.33;
+    text-align: left;
+    color: $spb-sky-3;
+}
+
+@mixin SA {
+    font-family: MegaFonGraphikLC;
+    font-size: 15px;
+    line-height: 1.33;
+    text-align: left;
+    color: $soggy-asphalt;
+}
+
+@mixin Green {
+    font-family: MegaFonGraphikLC;
+    font-size: 15px;
+    line-height: 1.33;
+    text-align: left;
+    color: $green;
+}
+
+@mixin SA {
+    font-family: MegaFonGraphikLC;
+    font-size: 14px;
+    line-height: 1.43;
+    text-align: center;
+    color: $soggy-asphalt;
+}
+
+@mixin MWhite-C {
+    font-family: MegaFonGraphikLC;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+@mixin MSPB3-CAPS {
+    font-family: MegaFonGraphikLC;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: left;
+    color: $spb-sky-3;
+}
+
+@mixin MSA-C {
+    font-family: MegaFonGraphikLC;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: left;
+    color: $soggy-asphalt;
+}
+
+@mixin SA {
+    font-family: MegaFonGraphikLC;
+    font-size: 12px;
+    line-height: 1.25;
+    text-align: left;
+    color: $soggy-asphalt;
+}
+
+@mixin Spb3 {
+    font-family: MegaFonGraphikLC;
+    font-size: 12px;
+    line-height: 1.25;
+    text-align: left;
+    color: $spb-sky-3;
+}
+
+@mixin White {
+    font-family: MegaFonGraphikLC;
+    font-size: 12px;
+    line-height: 1.25;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+@mixin MWhite-CAPS {
+    font-family: MegaFonGraphikLC;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+@mixin MSPB3-CAPS {
+    font-family: MegaFonGraphikLC;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-align: left;
+    color: $spb-sky-3;
+}
+
+

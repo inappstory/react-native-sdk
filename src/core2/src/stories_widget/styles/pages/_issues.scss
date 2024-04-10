@@ -1,0 +1,296 @@
+////////////////
+// Issue Page //
+////////////////
+
+.r-issues-info {
+
+	nav.navbar {
+		box-shadow: 0 0 15px 0 rgba(40,40,40,.2);
+	}
+
+	margin-top: 75px;
+
+	h2.small-title {
+		margin: 5px 0;
+	}
+
+
+	.preview-slider {
+		.slick-slider {
+			width: 312px;
+		}
+		div {
+			padding:    0;
+			list-style: none;
+
+			margin-bottom: 0;
+
+			div > a {
+				width:      312px;
+				//height:     416px;
+				display:    block;
+				background: #f3f3f3;
+
+				img {
+					width: 100%;
+				}
+
+			}
+		}
+
+		.slick-dots {
+			margin-top: 10px;
+			padding: 0;
+
+			li {
+				margin: 0;
+				button {
+					display: block;
+					background: $c-white;
+					border: none;
+					width: 8px;
+					height: 8px;
+					padding: 0;
+					border-radius: 4px;
+					margin-right: 5px;
+				}
+
+				&:hover {
+					button {
+						background: $c-dark-orange;
+					}
+				}
+
+				&.slick-active {
+					button {
+						background: $c-dark-orange;
+					}
+				}
+			}
+		}
+
+		@include phone {
+
+			.slick-dots {
+				width: 200px;
+			}
+
+			.slick-slider {
+				width: 200px;
+				margin: 0 auto;
+			}
+
+			div {
+				div > a {
+					width: 200px;
+				}
+			}
+		}
+		
+		@media screen and (min-width: $size-phone-max - 1) and (max-width: $size-laptop) {
+			.slick-dots {
+				width: 250px;
+			}
+
+			.slick-slider {
+				width: 250px;
+			}
+
+			div {
+				div > a {
+					width: 250px;
+				}
+			}
+		}
+	}
+
+	h3.title {
+		font-weight: bold;
+		font-size: em(30px);
+		color:     $c-black;
+		max-height: 1.4em;
+		overflow: hidden;
+
+		.tt {
+			display: inline-block;
+			width: 40px;
+			height: 30px;
+			background-size: contain;
+			background-position: right;
+			background-repeat: no-repeat;
+			background-image: url("images/ic_have_articles_large.png");
+		}
+	}
+
+	.date {
+		font-weight: normal;
+		color:          $c-dark-gray;
+		font-family: Arial;
+		font-size: em(13px);
+
+		text-transform: capitalize;
+		margin:         35px 0;
+
+		.calendar {
+			width:               20px;
+			height:              12px;
+			background-size:     contain;
+			background-repeat:   no-repeat;
+			background-image:    url("images/ic_calendar_gray.png");
+			background-position: center;
+			display:             inline-block;
+		}
+	}
+
+	.categories {
+		@extend .date;
+		margin-top: 10px;
+		text-transform: none;
+
+		.category-icon {
+			margin: 0 4px 0 0;
+		}
+		a {
+			font-family: Arial;
+			font-size: em(13px);
+			color: $c-light-orange;
+
+			&:hover {
+				color: $c-light-orange;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.title-mobile {
+		text-transform: none;
+		text-align: center;
+		display: none;
+
+		.tt {
+			display: inline-block;
+			width: 25px;
+			height: 20px;
+			background-size: contain;
+			background-position: right;
+			background-repeat: no-repeat;
+			background-image: url("images/ic_have_articles.png");
+		}
+	}
+
+	.categories-mobile {
+		display: none;
+		text-align: center;
+		color: $c-dark-gray;
+		margin-top: -10px;
+		margin-bottom: 5px;
+
+		.calendar {
+			width:               20px;
+			height:              12px;
+			background-size:     contain;
+			background-repeat:   no-repeat;
+			background-image:    url("images/ic_calendar_gray.png");
+			background-position: center;
+			display:             inline-block;
+		}
+
+		a {
+			color: $c-dark-gray;
+		}
+	}
+
+	.description {
+		font-weight: normal;
+		font-size:     $fs-medium;
+		color:         $c-black;
+		margin-bottom: 35px;
+		line-height:   22px;
+		//height:        30px*6;
+		overflow:      hidden;
+		@include transition(0.5s);
+	}
+
+	.read-more {
+		font-weight: normal;
+		font-size: $fs-large;
+		color: $c-green;
+		cursor: pointer;
+		display: block;
+		margin-top: -20px;
+		margin-bottom: 35px;
+	}
+
+	.btn-read {
+		font-weight:      bold;
+		width:            185px;
+		display: block;
+		text-align: center;
+		padding: 15px;
+		//background: $c-btn-bg;
+		//color: $c-btn-text;
+		text-decoration: none;
+
+		@include Font-Officina-Serif("Bold");
+	}
+	.btn-read:focus {
+		//background: $c-btn-bg-press;
+		//color: $c-btn-text;
+	}
+	@include phone {
+
+		margin-top: 0;
+
+		.title-mobile, .categories-mobile {
+			display: block;
+		}
+
+		.preview-slider {
+			@include display-flex;
+			@include justify-content(center);
+
+			.slick-slider {
+				margin-bottom: 15px;
+			}
+
+			.slick-dots {
+				margin-top: 5px;
+				margin-bottom: 0;
+			}
+		}
+
+		.col-sm-8 {
+			@include display-flex;
+			@include flex-direction(column);
+		}
+
+		h3.title {
+			display: none;
+		}
+
+		.date {
+			display: none;
+		}
+
+		.categories {
+			display: none;
+		}
+
+		.btn-read {
+			margin:  0 auto 30px;
+		}
+
+		.description {
+			order: 2;
+			text-align: justify;
+		}
+
+		.read-more {
+			order: 3;
+		}
+	}
+}
+
+.lb-data .lb-number {
+	display: none !important;
+}

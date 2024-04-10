@@ -1,0 +1,97 @@
+///////////
+// Promo //
+///////////
+
+body {
+    &.custom {
+        .promo {
+            .carousel-indicators {
+                opacity: 0.6;
+                li {
+                    background: $c-white;
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 8px;
+                    border: 2px solid $c-green;
+                    margin: 0 2px;
+                    padding: 0;
+                    vertical-align: middle;
+
+                    &:hover {
+                        @include not-phone {
+                            background: $c-white;
+                        }
+                    }
+
+                    &.active {
+                        position: relative;
+
+                        width: 16px;
+                        height: 16px;
+                        background: $c-white;
+                        border: 2px solid $c-green;
+
+                        &:after {
+                            content: ' ';
+                            display: block;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 4px;
+                            background: $c-orange;
+                            top: 2px;
+                            left: 2px;
+                            position: absolute;
+                        }
+                    }
+                }
+            }
+
+            .carousel-control {
+
+                background: rgba($c-white, 0.5);
+                @include box-shadow(0 3px 35px rgba($c-black, 0.4));
+                @include border-radius(45px);
+                //top: 125px;
+                margin-top: -45px;
+                text-indent: 0;
+                color: $c-gray;
+                font-size: 64px;
+                z-index: 200;
+                position: absolute;
+                cursor: pointer;
+                text-align: center;
+
+                top: 50%;
+                opacity: 0;
+                @include transition(opacity, 0.5s);
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+
+                &.left {
+                    left: 15px;
+                    .fa {
+                        margin-right: 8px;
+                    }
+                }
+
+                &.right {
+                    right: 15px;
+                    .fa {
+                        margin-left: 8px;
+                    }
+                }
+
+                &:hover {
+                    background: $c-white;
+                }
+            }
+
+            &:hover {
+                .carousel-control {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

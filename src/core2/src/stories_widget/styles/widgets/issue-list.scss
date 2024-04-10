@@ -1,0 +1,78 @@
+
+body {
+    &.custom {
+
+        .list-issues-title {
+            .more {
+                @extend .btn;
+                @extend .btn-primary;
+
+                position: absolute;
+
+                width: auto;
+                bottom: 5px;
+                padding: 5px 20px;
+
+                font-size: 14px;
+
+                @include not-phone {
+                    width: auto;
+                    bottom: 7px;
+                    padding: 5px 20px;
+                }
+            }
+        }
+
+        .issue {
+            .issue-cover {
+                .issue-cover-overlay {
+                    span {
+                        color: $c-white;
+                    }
+                }
+                .free-label-container {
+                    .free-label {
+                        fill: $c-green;
+                    }
+                }
+
+            }
+
+            .issue-footer {
+                .issue-footer-inner {
+                    .issue-magazine-name {
+                        color: $c-dark-gray;
+                        &:hover, &:focus {
+                            color: $c-green;
+                        }
+                        .tt {
+                            background-image: url("images/ic_have_articles.png");
+                        }
+                    }
+
+                    .issue-date {
+                        color: $c-light-gray;
+                    }
+
+                    .issue-favorite-btn {
+                        .svg-image {
+                            svg path {
+                                fill: $c-green;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                @include not-phone {
+                    .issue-footer {
+                        .issue-magazine-name {
+                            color: $c-green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

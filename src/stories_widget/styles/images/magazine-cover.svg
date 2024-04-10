@@ -1,0 +1,20 @@
+<svg viewBox="0 0 98 138" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="magazine-cover" transform="translate(-84.000000, -1652.000000)">
+            <g id="REader" transform="translate(35.000000, 1610.000000)">
+                <g id="Icon/Mag" transform="translate(49.000000, 42.000000)">
+                    <g id="Group-2">
+                        <polygon id="Rectangle-11" fill="#CCECFF" points="3 3 95.0791016 0 98 3 98 138 3 138 0 135.413086"></polygon>
+                        <path d="M95,85.8748117 L95,0 L0,0 L0,135 L71.7391439,135 C84.7040167,115.046876 92.4576354,98.671813 95,85.8748117 Z" id="Combined-Shape" fill="#A5DDFF"></path>
+                        <path d="M72.3114385,135.070312 L91.4023437,97.5146484 C85.4348958,105.502279 77.2695312,112.439912 66.90625,118.327548 C72.578125,122.689912 74.3798545,128.270833 72.3114385,135.070312 Z" id="Path-2" fill="#7FCBF8"></path>
+                        <rect id="Rectangle-12" fill="#82CCF6" x="14" y="12" width="68" height="18"></rect>
+                        <rect id="Rectangle-12" fill="#82CCF6" x="14" y="101" width="32" height="3.5"></rect>
+                        <rect id="Rectangle-12" fill="#82CCF6" x="14" y="109" width="37" height="3.5"></rect>
+                        <rect id="Rectangle-12" fill="#82CCF6" x="14" y="39" width="57" height="3.5"></rect>
+                        <rect id="Rectangle-12" fill="#82CCF6" x="14" y="117" width="27" height="3.5"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

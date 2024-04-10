@@ -1,0 +1,36 @@
+
+body {
+    &.custom {
+
+        .issue-detail {
+            .issue-detail-preview {
+                .issue-detail-carousel {
+                    .carousel-indicators {
+                        li {
+                            background: $c-transparent;
+                            border-color: rgba($c-black, .25);
+
+                            &:hover {
+                                @include not-phone {
+                                    background: rgba($c-black, .35);
+                                    border-color: rgba($c-black, .35);
+                                }
+                            }
+
+                            &.active {
+                                background: $c-green;
+                                border-color: $c-transparent;
+                                width: 10px;
+                                height: 10px;
+                                margin: 1px;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+
+    }
+}

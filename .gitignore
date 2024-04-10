@@ -1,0 +1,18 @@
+
+# Mac DS_Store Files
+.DS_Store
+
+/node_modules
+/auth.json
+
+/static
+
+
+*.css.map
+*.min.css
+*.min.js
+
+# github rep
+/web-sdk-doc
+/npm
+/stats

@@ -1,0 +1,139 @@
+
+body {
+    &.custom {
+
+        .btn {
+            @include MegaFonGraphikLC(Medium);
+            font-size: rem(15px);
+            line-height: rem(20px);
+            padding: rem(14px) rem(35px);
+            &.btn-small {
+                font-size: rem(12px);
+                line-height: rem(15px);
+                padding: rem(5px) rem(30px);
+            }
+            color: $soggy-asphalt;
+            @include border-radius(100px);
+
+            background: $c-transparent;
+            border: solid 2px $spb-sky-2;
+            box-shadow: none;
+
+            &:disabled {
+                cursor: not-allowed;
+            }
+
+            &:hover {
+                &:not(:disabled) {
+                    border-color: $spb-sky-3;
+                    background: $c-transparent;
+                    color: $soggy-asphalt;
+                }
+            }
+            &:active {
+                border-color: $soggy-asphalt;
+                background: $c-transparent;
+                color: $soggy-asphalt;
+            }
+            &:focus {
+                box-shadow: none;
+                background: $c-transparent;
+                color: $soggy-asphalt;
+            }
+            &:active:focus {
+                box-shadow: none;
+                background: $c-transparent;
+                color: $soggy-asphalt;
+            }
+
+            &.btn-secondary {
+                &:hover {
+                    border-color: $spb-sky-3;
+                    background: $c-transparent;
+                    color: $soggy-asphalt;
+                }
+                &:active {
+                    border-color: $soggy-asphalt;
+                    background: $c-transparent;
+                    color: $soggy-asphalt;
+                }
+                &:focus {
+                    box-shadow: none;
+                    background: $c-transparent;
+                    color: $soggy-asphalt;
+                }
+                &:active:focus {
+                    box-shadow: none;
+                    background: $c-transparent;
+                    color: $soggy-asphalt;
+                }
+            }
+
+            &.btn-primary, &.active {
+                color: $c-white;
+                background: $green;
+                border: solid 2px $green;
+                box-shadow: none;
+
+                &:hover {
+                    &:not(:disabled) {
+                        color: $c-white;
+                        border-color: rgb(38, 196, 111);
+                        background-color: rgb(38, 196, 111);
+                    }
+                }
+                &:active {
+                    color: $c-white;
+                    border-color: rgb(5, 172, 83);
+                    background-color: rgb(5, 172, 83);
+                }
+                &:focus {
+                    box-shadow: none;
+                }
+                &:active:focus {
+                    box-shadow: none;
+                }
+
+            }
+
+            &.btn-danger {
+                color: $error-text;
+                &:hover, &:active, &:focus, &:active:focus {
+                    color: $error-text;
+                }
+
+                &.loading {
+                    &:after {
+                        box-shadow: 0 1px 0 0 $soggy-asphalt;
+                    }
+                }
+            }
+
+            &.loading {
+                color: transparent!important;
+            }
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

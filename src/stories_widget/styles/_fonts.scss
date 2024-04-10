@@ -1,0 +1,55 @@
+///////////
+// Fonts //
+///////////
+@mixin FontWeight($type) {
+	$weight: normal;
+	@if $type == 'Light' {
+		$weight: 300;
+	} @else if $type == 'Regular' {
+		$weight: normal;
+	} @else if $type == 'Medium' {
+		$weight: 500;
+	} @else if $type == 'Bold' {
+		$weight: bold;
+	} @else if $type == 'Semibold' {
+		$weight: 600;
+	} @else if $type == 'Black' {
+		$weight: 900;
+	}
+	font-weight:            $weight;
+}
+
+@mixin MegaFonGraphikLC($type) {
+	font-family:            MegaFonGraphikLC, sans-serif;
+	font-variant-ligatures: common-ligatures contextual;
+	@include FontWeight($type);
+}
+
+
+
+@mixin Photoshop-letter-spacing($size) {
+	letter-spacing: ($size/1000)+em
+}
+
+$fs-base: 16px;
+$browser-context: $fs-base;
+
+/**
+ * @param $pixels [Sass::Script::Value::Number]
+ */
+@function rem($pixels, $context: $browser-context) {
+
+    @if type-of($pixels) != "number" {
+        @return false;
+    }
+
+	@if (unitless($pixels)) {
+		$pixels: $pixels * 1px;
+	}
+
+	@if (unitless($context)) {
+		$context: $context * 1px;
+	}
+
+	@return $pixels / $context * 1rem;
+}

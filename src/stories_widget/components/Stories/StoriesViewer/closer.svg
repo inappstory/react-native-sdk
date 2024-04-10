@@ -1,0 +1,61 @@
+<svg viewBox="0 0 35 35" fill="white" id="svg-close" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <style>
+            #svg-close .cls-1,
+            #svg-close .cls-2,
+            #svg-close .cls-3,
+            #svg-close .cls-6{fill:none;}
+            #svg-close .cls-1{clip-rule:evenodd;}
+            #svg-close .cls-3{fill-rule:evenodd;}
+            #svg-close .cls-4{clip-path:url(#clip-path);}
+            #svg-close .cls-5{clip-path:url(#clip-path-2);}
+            #svg-close .cls-6{stroke:white;stroke-miterlimit:10;stroke-width:2px;}
+            #svg-close .cls-7{isolation:isolate;}
+            #svg-close .cls-8{clip-path:url(#clip-path-6);}
+            #svg-close .cls-9{fill:white;}
+        </style>
+        <clipPath id="clip-path">
+            <polygon class="cls-1"
+                     points="16.75 17.45 7.2 7.91 7.91 7.2 17.45 16.75 27 7.2 27.71 7.91 18.16 17.45 27.71 27 27 27.71 17.45 18.16 7.91 27.71 7.2 27 16.75 17.45"/>
+        </clipPath>
+        <clipPath id="clip-path-2">
+            <rect class="cls-2" x="5" y="5" width="25" height="25"/>
+        </clipPath>
+        <clipPath id="clip-path-6">
+            <rect class="cls-2" x="7" y="7" width="21" height="21"/>
+        </clipPath>
+    </defs>
+    <g id="Layer_2">
+        <g id="Layer_1-2">
+            <g class="cls-4">
+                <g class="cls-5">
+                    <polygon class="cls-6"
+                             points="16.75 17.45 7.2 7.91 7.91 7.2 17.45 16.75 27 7.2 27.71 7.91 18.16 17.45 27.71 27 27 27.71 17.45 18.16 7.91 27.71 7.2 27 16.75 17.45"/>
+                </g>
+            </g>
+            <g class="cls-4">
+                <g class="cls-5">
+                    <g class="cls-7">
+                        <g class="cls-5">
+                            <g class="cls-8">
+                                <polygon class="cls-9"
+                                         points="16.75 17.45 7.2 7.91 7.91 7.2 17.45 16.75 27 7.2 27.71 7.91 18.16 17.45 27.71 27 27 27.71 17.45 18.16 7.91 27.71 7.2 27 16.75 17.45"/>
+                            </g>
+                            <g class="cls-4">
+                                <g class="cls-8">
+                                    <polygon class="cls-6"
+                                             points="16.75 17.45 7.2 7.91 7.91 7.2 17.45 16.75 27 7.2 27.71 7.91 18.16 17.45 27.71 27 27 27.71 17.45 18.16 7.91 27.71 7.2 27 16.75 17.45"/>
+                                </g>
+                            </g>
+                            <g class="cls-5">
+                                <g class="cls-8">
+                                    <rect class="cls-10" width="35" height="35"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

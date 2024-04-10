@@ -1,0 +1,28 @@
+
+$grid-breakpoints: (
+        xs: 0, // mobile
+        sm: 576px, // landscape mobile ???
+        md: 650px, // tablet old 768
+        lg: 980px, // desktop old 992
+        xl: 1220px, // desktop old 1200
+        xw: 1360px
+);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+        sm: 536px, // old 540
+        md: 580px, // old 720
+        lg: 900px, // old 960
+        xl: 1080px, // old 1140
+        xw: 1220px
+);
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12;
+$grid-gutter-width:           20px;

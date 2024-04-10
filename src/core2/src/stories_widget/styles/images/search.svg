@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.69 21.08" id="svg-search">
+    <defs>
+        <style>#svg-search .cls-1{fill:#333;}</style>
+    </defs>
+    <title>search</title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <g id="Symbols">
+                <g id="Icon-_-Search" data-name="Icon-/-Search">
+                    <g id="Group-4">
+                        <path id="Oval-2" class="cls-1"
+                              d="M16.36,16.36a9.58,9.58,0,1,1,0-13.56A9.58,9.58,0,0,1,16.36,16.36ZM15.3,15.3a8.08,8.08,0,1,0-11.43,0A8.08,8.08,0,0,0,15.3,15.3Z"/>
+                        <polygon id="Rectangle-5" class="cls-1"
+                                 points="15.05 16.61 16.22 15.44 20.69 19.91 19.52 21.08 15.05 16.61"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

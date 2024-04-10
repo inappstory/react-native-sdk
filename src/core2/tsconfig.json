@@ -1,0 +1,31 @@
+{
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["./*"]
+    },
+    "types": [
+      "@types/node"
+    ],
+    "experimentalDecorators": true,
+
+    "target": "ES5",
+    "strict": false,
+    "allowJs": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "react"
+  },
+  "exclude": ["node_modules"],
+  "include": [
+    "global.d.ts",
+    "vue-shim.d.ts",
+    "./**/*",
+    "./**/*.ts",
+    "./**/*.vue",
+    "./**/*.tsx",
+  ]
+}

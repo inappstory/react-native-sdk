@@ -1,0 +1,202 @@
+/////////////////
+// Search Page //
+/////////////////
+
+.r-search-index {
+
+    background: $c-white;
+
+    .search-header {
+        background: $spb-sky-1;
+    }
+    .search-result-alert-info {
+        h3 {
+            font-size: rem(24px);
+            line-height: rem(30px);
+            margin-top: rem(53px);
+            margin-bottom: rem(57px);
+            color: $spb-sky-3;
+            @include media-breakpoint-up(lg) {
+                margin-top: rem(46px);
+                margin-bottom: rem(46px);
+                font-size: rem(28px);
+                line-height: rem(35px);
+            }
+            strong {
+                color: $soggy-asphalt;
+            }
+        }
+    }
+    .search-result-empty-results {
+        margin-top: rem(100px);
+        @include text-lead();
+    }
+
+    .search-result-cover-container {
+        background-color: $c-white;
+        margin-bottom: rem(22px);
+    }
+    .search-result-cover {
+        position: absolute;
+        height: 100%;
+        img {
+            width: auto;
+            height: 100%;
+
+            object-fit: contain;
+            object-position: 50% 50%;
+
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+    }
+    .search-result-cover-container {
+        @include aspect-ratio(280, 205);
+
+        @include media-breakpoint-up(md) {
+            @include aspect-ratio(210, 160);
+
+            margin-bottom: 0;
+            max-width: 230px!important;
+        }
+    }
+
+    .search-result-item {
+        padding-top: 40px;
+        padding-bottom: 38px;
+
+        position: relative;
+        &:after {
+            display: block;
+            content: "";
+            position: absolute;
+            height: 1px;
+            background-color: $spb-sky-1;
+            bottom: 0;
+
+            left: map-get($grid-gutters, xs) / 2;
+            right: map-get($grid-gutters, xs) / 2;
+            @include media-breakpoint-up(md) {
+                left: map-get($grid-gutters, md) / 2;
+                right: map-get($grid-gutters, md) / 2;
+            }
+            @include media-breakpoint-up(lg) {
+                left: map-get($grid-gutters, lg) / 2;
+                right: map-get($grid-gutters, lg) / 2;
+            }
+            @include media-breakpoint-up(xl) {
+                left: map-get($grid-gutters, xl) / 2;
+                right: map-get($grid-gutters, xl) / 2;
+            }
+            @include media-breakpoint-up(xw) {
+                left: map-get($grid-gutters, xw) / 2;
+                right: map-get($grid-gutters, xw) / 2;
+            }
+
+        }
+
+        .highlight{
+            background-color: $green;
+        }
+
+    }
+
+    .search-result-item-category {
+        display: inline-block;
+        @include text-category();
+        color: $spb-sky-3;
+        text-align: left;
+        margin-bottom: rem(10px);
+
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+
+
+    }
+    .search-result-item-title {
+        display: inline-block;
+        @include text-lead();
+        @include FontWeight(Medium);
+        @include color-soggy-asphalt-link();
+        margin-bottom: rem(15px);
+
+        @include media-breakpoint-up(md) {
+            display: block;
+            font-size: rem(18px);
+            line-height: rem(25px);
+            margin-bottom: rem(10px);
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2; /* number of lines to show */
+
+            line-height: 25px;        /* fallback */
+            max-height: (25px * 3);       /* fallback */
+
+
+        }
+    }
+
+    .search-result-item-content {
+        @include media-breakpoint-up(md) {
+            display: block;
+            font-size: rem(15px);
+            line-height: rem(20px);
+            margin-bottom: 0;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2; /* number of lines to show */
+
+            line-height: 20px;        /* fallback */
+            max-height: (20px * 2);       /* fallback */
+
+        }
+
+    }
+
+    .search-result-item-source {
+        display: inline-block;
+        color: $spb-sky-3;
+        margin: 0;
+
+        svg {
+            width: rem(10px);
+            height: rem(16px);
+            vertical-align: middle;
+            margin-top: rem(-4px);
+            path {
+                fill: $spb-sky-2;
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            margin-bottom: rem(-4px);
+            left: map-get($grid-gutters, md) / 2;
+            right: map-get($grid-gutters, md) / 2;
+        }
+        @include media-breakpoint-up(lg) {
+            left: map-get($grid-gutters, lg) / 2;
+            right: map-get($grid-gutters, lg) / 2;
+        }
+        @include media-breakpoint-up(xl) {
+            left: map-get($grid-gutters, xl) / 2;
+            right: map-get($grid-gutters, xl) / 2;
+        }
+        @include media-breakpoint-up(xw) {
+            left: map-get($grid-gutters, xw) / 2;
+            right: map-get($grid-gutters, xw) / 2;
+        }
+
+    }
+}
