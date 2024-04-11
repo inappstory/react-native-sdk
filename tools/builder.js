@@ -10506,18 +10506,22 @@ new Viz__default["default"]({
 
 var hooks = {
   beforeAll: [async () => {
-    const ls = await fs__namespace.readdir(`${process.cwd()}/npm`);
+    fs__namespace.exists(`${process.cwd()}/npm`, async e => {
+      if (e) {
+        const ls = await fs__namespace.readdir(`${process.cwd()}/npm`);
 
-    for (const path of ls) {
-      // filter repo elements
-      const ls = (await fs__namespace.readdir(`${process.cwd()}/npm/${path}`)).filter(el => ![".git", ".gitignore", ".npmrc"].includes(el));
+        for (const path of ls) {
+          // filter repo elements
+          const ls = (await fs__namespace.readdir(`${process.cwd()}/npm/${path}`)).filter(el => ![".git", ".gitignore", ".npmrc"].includes(el));
 
-      for (const element of ls) {
-        await fs__namespace.rm(`${process.cwd()}/npm/${path}/${element}`, {
-          recursive: true
-        });
+          for (const element of ls) {
+            await fs__namespace.rm(`${process.cwd()}/npm/${path}/${element}`, {
+              recursive: true
+            });
+          }
+        }
       }
-    }
+    });
   }, // () => fs.emptyDir(`${process.cwd()}/npm`),
   async () => {
     process.env.IS_BUILD = 'true';
