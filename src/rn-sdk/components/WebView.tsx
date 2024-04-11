@@ -33,6 +33,6 @@ export const WebView = React.forwardRef(
 
 const styles = StyleSheet.create({
     opacityHack: {
-        opacity: 0.99,
+        opacity: 0.9999,
     },
 });

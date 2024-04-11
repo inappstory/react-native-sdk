@@ -10,8 +10,8 @@ const common = {
     license: "MIT",
     devDependencies: {},
     scripts: {},
-    repository: "https://github.com/inappstory/react-native-ias",
-    bugs: "https://github.com/inappstory/react-native-ias/issues",
+    repository: "https://github.com/inappstory/react-native-sdk",
+    bugs: "https://github.com/inappstory/react-native-sdk/issues",
     homepage: "https://inappstory.com",
     engines: {
         node: ">=11.0.0",
@@ -26,7 +26,7 @@ const keywords = ["stories", "stories SDK", "InAppStory"];
 
 const version = {
     "ias-react": "2.2.0",
-    "react-native-ias": "0.3.15",
+    "react-native-ias": "0.3.16",
 
     "effector": "22.1.2",
     "effector-react": "22.0.6",

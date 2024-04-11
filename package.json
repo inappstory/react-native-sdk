@@ -179,5 +179,8 @@
             "@react-navigation/([^/]+)": "<rootDir>/packages/$1/src"
         },
         "preset": "react-native"
-    }
+    },
+    "workspaces": [
+        "./npm/*"
+    ]
 }

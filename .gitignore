@@ -16,3 +16,6 @@
 /web-sdk-doc
 /npm
 /stats
+/tools/builder.js
+/packages/react-native-ias/package.json
+/packages/ias-react/package.json

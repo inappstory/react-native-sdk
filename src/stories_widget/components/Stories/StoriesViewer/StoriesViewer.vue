@@ -377,6 +377,7 @@ export default class StoriesViewer extends Vue {
     timerPaused: boolean = false;
 
     pausedUI: boolean = false;
+    timerPausedByUser: boolean = false;
     closeGestureInAction: boolean = false;
     swipeUpGestureInAction: boolean = false;
 
@@ -875,6 +876,49 @@ export default class StoriesViewer extends Vue {
             });
         };
 
+        (window as any)._showLayer = (layerIndex: number) => {
+            const getLayers = (): HTMLDivElement[] => {
+                if (!this.centralSlideEl) return [];
+                const selector = `.stories-slide._position_1 .stories-slide-content .narrative-slide.narrative-multi-slide`;
+                return Array.from((this.centralSlideEl as HTMLElement).querySelectorAll(selector))
+            }
+
+            const hideLayer = (layer: HTMLDivElement) => {
+                if (("_narrative_animation" in window)) {
+                    (window as any)._narrative_animation?.stop(layer, true);
+                }
+                layer.classList.add("hidden");
+                stopVideo(layer)
+            }
+
+            const showLayer = (layer: HTMLDivElement) => {
+                self.setTimer({ remainingTimeout: this.timeout, clearProgressBeforePause: true, forceStartTimer: true, isAutoTransition: false })
+                layer.classList.remove("hidden");
+                if (("_narrative_animation" in window)) {
+                    (window as any)._narrative_animation?.start(layer);
+                }
+                resumeVideo(layer)
+            }
+
+            const stopVideo = (layer: HTMLDivElement) => {
+                Array.from(layer.querySelectorAll("video")).forEach(video => {
+                    video.pause();
+                    video.currentTime = 0;
+                });
+            }
+
+            const resumeVideo = (layer: HTMLDivElement) => {
+                Array.from(layer.querySelectorAll("video")).forEach(video => video.play());
+            }
+
+            self.__afterStartInitQueuePush(() => {
+                const layers = getLayers()
+                const activeLayer = layers[layerIndex];
+                layers.forEach(hideLayer)
+                activeLayer && showLayer(activeLayer)
+            });
+        };
+
         (window as any)._showNarrativeNextSlide = function (delay: string) {
             self.__afterStartInitQueuePush(() => {
                 self.stopTimer();
@@ -1102,7 +1146,7 @@ export default class StoriesViewer extends Vue {
     }
 
     slideClick(event: Event): void | boolean {
-        if (this.pausedUI) {
+        if ((this.timerPaused && this.timerPausedByUser) || this.pausedUI) {
             return;
         }
 
@@ -1590,11 +1634,13 @@ export default class StoriesViewer extends Vue {
         this._pausedStory = this.activeStory;
         this._pausedSlide = this.storyActiveSlide[this.currentIndex];
         debug(`onPause: t--${this.timeout * this._progressBeforePause} p--${this._progressBeforePause * 100}%`);
+        this.pauseVideo();
     }
 
     onResume(): void {
         // check paused slide and story
         this.pausedUI = false;
+        this.timerPausedByUser = false;
 
         if (this._pausedStory === this.activeStory && this._pausedSlide === this.storyActiveSlide[this.currentIndex]) {
             let remainingProgress = 1 - this._progressBeforePause;
@@ -1608,6 +1654,7 @@ export default class StoriesViewer extends Vue {
         } else {
             // debug(`on resume with another slide or story`)
         }
+        this.resumeVideo();
     }
 
     setTimer(
@@ -1722,6 +1769,7 @@ export default class StoriesViewer extends Vue {
 
         this._progressBeforePause = 0;
         this.pausedUI = false;
+        this.timerPausedByUser = false;
 
         if (this.storyActiveSlide[storyIndex] === slides.length - 1) {
             this.stopTimer();
@@ -1745,6 +1793,7 @@ export default class StoriesViewer extends Vue {
 
         this._progressBeforePause = 0;
         this.pausedUI = false;
+        this.timerPausedByUser = false;
 
         if (this.storyActiveSlide[storyIndex] === 0) {
             this.stopTimer();
@@ -2184,6 +2233,43 @@ export default class StoriesViewer extends Vue {
         };
     }
 
+
+
+    getLayersElements(): Array<HTMLDivElement> {
+        if (!this.centralSlideEl) return [];
+        const selector = `.stories-slide._position_1 .stories-slide-content .narrative-slide.narrative-multi-slide`;
+        return Array.from((this.centralSlideEl as HTMLElement).querySelectorAll(selector));
+    }
+
+    getActiveSlideOrLayerElement(): HTMLDivElement | null {
+        if (this.centralSlideEl) {
+            const layer = this.centralSlideEl.querySelector<HTMLDivElement>(".stories-slide._position_1 .stories-slide-content .narrative-slide.narrative-multi-slide:not(.hidden)");
+            if (layer != null) {
+                return layer;
+            }
+            return this.centralSlideEl.querySelector<HTMLDivElement>(".stories-slide._position_1 .stories-slide-content.narrative-slide");
+        }
+        return null;
+    }
+
+    pauseVideo(): void {
+        const activeSlideOrLayerElement = this.getActiveSlideOrLayerElement();
+        if (activeSlideOrLayerElement != null) {
+            Array.from(activeSlideOrLayerElement.querySelectorAll("video")).forEach(video => {
+                video.pause();
+            });
+        }
+    }
+
+    resumeVideo(): void {
+        const activeSlideOrLayerElement = this.getActiveSlideOrLayerElement();
+        if (activeSlideOrLayerElement != null) {
+            Array.from(activeSlideOrLayerElement.querySelectorAll("video")).forEach(video => {
+                video.play();
+            });
+        }
+    }
+
     pauseAndBlockViewerUI(): void {
         this.timerPaused = true;
         this.pausedUI = true;
@@ -2548,6 +2634,7 @@ export default class StoriesViewer extends Vue {
         }
         this._pausedTimerId = setTimeout(() => {
             this.timerPaused = true;
+            this.timerPausedByUser = true; // for slideClick handler - prevent nextSlide event when timer paused by user
         }, 200);
 
         if (this._pausedUITimerId) {
@@ -2607,10 +2694,16 @@ export default class StoriesViewer extends Vue {
             valY = (e as any).pageY || ((e as TouchEvent).touches && (e as TouchEvent).touches[0].pageY);
 
             // если еще не успели войти в pausedUI и начали двигать - то отменяем переход в pausedUI
-            if (Math.abs(startVal - val) > 0 && this.pausedUI === false && this._pausedUITimerId) {
-                clearTimeout(this._pausedUITimerId);
+            // и отменяем переход в timerPaused
+            if (Math.abs(startVal - val) > 0) {
+                if (this._pausedTimerId) {
+                    clearTimeout(this._pausedTimerId);
+                }
+                if (this._pausedUITimerId) {
+                    clearTimeout(this._pausedUITimerId);
+                }
                 this._pausedUITimerId = null;
-                return;
+                // return;
             }
 
             let x = val - startVal;
@@ -2807,8 +2900,16 @@ export default class StoriesViewer extends Vue {
                 }
 
                 this._rotating = false;
-                this.timerPaused = false;
-                this.pausedUI = false;
+                setTimeout(() => {
+                    // wait for slideClick (slideClick check timerPaused and timerPausedByUser
+                    // for prevent nextSlide action when we in timerPaused)
+                    // todo - move slideClick logic inside touchendListener and remove this hack
+
+                    this.timerPaused = false;
+                    this.timerPausedByUser = false;
+                    this.pausedUI = false;
+
+                }, 100);
 
                 if (globalVerticalSwipeGesture && deltaValY) {
                     const storiesViewer: HTMLElement = this.$refs.storiesViewer as HTMLElement;
