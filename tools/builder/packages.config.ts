@@ -26,7 +26,7 @@ const keywords = ["stories", "stories SDK", "InAppStory"];
 
 const version = {
     "ias-react": "2.2.0",
-    "react-native-ias": "0.3.16",
+    "react-native-ias": "0.3.17",
 
     "effector": "22.1.2",
     "effector-react": "22.0.6",

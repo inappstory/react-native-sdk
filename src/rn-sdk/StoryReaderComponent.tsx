@@ -94,7 +94,7 @@ function StoryReaderComponent({ storyManager }: StoryReaderComponentProps) {
     return (
         <>
             {widgetStoryReader && needFirstRender && (
-                <SafeAreaView style={{ ...styles.container, backgroundColor: "transparent" }}>
+                <SafeAreaView style={{ ...styles.container, backgroundColor: "#000" }}>
                     <StatusBar barStyle="light-content" backgroundColor="#000" />
                     <View {...widgetStoryReader?.containerOptions} onLayout={onLayout}>
                         {attachedToLayout && <WebView {...widgetStoryReader?.viewOptions} ref={viewRef} />}
