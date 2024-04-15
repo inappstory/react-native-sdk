@@ -84,12 +84,6 @@ export default {
         rollupIasReactNative,
         // publishScript('effector-react'),
 
-        () => {
-            const srcDir = path.resolve(__dirname, "../npm/react-native-ias");
-            const destDir = path.resolve(__dirname, "../../rn-ias-qr/src/react-native-ias");
-
-            fse.copySync(srcDir, destDir, { overwrite: true, recursive: true });
-        },
     ],
 
     // effector: [

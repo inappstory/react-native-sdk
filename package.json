@@ -123,7 +123,7 @@
         "react": "16.13.1",
         "react-dom": "16.13.1",
         "react-native": "^0.63.4",
-        "react-native-device-info": "^8.4.8",
+        "react-native-device-info": "^10.13.1",
         "react-native-get-random-values": "^1.7.2",
         "react-native-share": "^7.3.9",
         "react-native-webview": "^13.6.4",
@@ -181,6 +181,7 @@
         "preset": "react-native"
     },
     "workspaces": [
-        "./npm/*"
+        "./npm/*",
+        "./examples/"
     ]
 }
