@@ -31,7 +31,7 @@
                     class="button-wrapper"
                     v-if="String(inputValue).trim().length > 0 || inputValueInternal.trim().length > 0"
                 >
-                    <button class="button" :style="buttonStyle" @click.prevent="onSubmit">
+                    <button class="button" :style="buttonStyle" @click.stop.prevent="onSubmit">
                         {{ String(config.configV2.main.button.text.value).trim() }}
                     </button>
                 </div>
